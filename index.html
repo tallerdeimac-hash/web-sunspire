@@ -13,6 +13,7 @@
             --accent-color: #3b82f6;
             --accent-hover: #2563eb;
             --border-color: #1e293b;
+            --yellow-accent: #facc15;
         }
         * {
             margin: 0;
@@ -88,7 +89,7 @@
         }
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             width: 100%;
         }
         header h1 {
@@ -100,6 +101,33 @@
             color: var(--text-muted);
             font-size: 1.1rem;
         }
+        /* Banner Visual Tecnológico */
+        .hero-banner {
+            width: 100%;
+            height: 280px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            background: linear-gradient(rgba(5, 11, 24, 0.4), rgba(5, 11, 24, 0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero-banner-content h2 {
+            font-size: 2.2rem;
+            color: var(--yellow-accent);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .hero-banner-content p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+        }
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -110,7 +138,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
-            padding: 2.5rem;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -121,15 +149,28 @@
             transform: translateY(-5px);
             border-color: var(--accent-color);
         }
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
         .card h3 {
             margin-bottom: 1rem;
             color: var(--text-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         .card p {
             color: var(--text-muted);
             margin-bottom: 1.5rem;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         .btn {
             display: inline-block;
@@ -162,6 +203,7 @@
             aside { position: relative; width: 100%; height: auto; }
             main { margin-left: 0; width: 100%; padding: 1.5rem; }
             .grid { grid-template-columns: 1fr; }
+            .hero-banner { height: 220px; }
         }
     </style>
 </head>
@@ -192,29 +234,49 @@
             <p>Soluciones tecnológicas integrales y soporte experto para particulares y empresas.</p>
         </header>
 
+        <!-- Banner Visual Principal -->
+        <div class="hero-banner">
+            <div class="hero-banner-content">
+                <h2>Innovación, Seguridad y Soporte N1-N3</h2>
+                <p>Infraestructuras de red robustas y mantenimiento profesional en La Puebla de Almoradiel.</p>
+            </div>
+        </div>
+
         <section class="grid">
+            <!-- Tarjeta 1 -->
             <div class="card">
-                <div>
-                    <h3>Quiénes Somos</h3>
-                    <p>Somos un equipo de técnicos cualificados con años de experiencia y capacidad de adaptación. Te asistimos donde lo necesites con máxima transparencia y garantía.</p>
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Quiénes Somos" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3>Quiénes Somos</h3>
+                        <p>Somos un equipo de técnicos cualificados con años de experiencia y capacidad de adaptación. Te asistimos donde lo necesites con máxima transparencia y garantía.</p>
+                    </div>
+                    <a href="./asesoramiento.html" class="btn">Saber más</a>
                 </div>
-                <a href="./asesoramiento.html" class="btn">Saber más</a>
             </div>
 
+            <!-- Tarjeta 2 -->
             <div class="card">
-                <div>
-                    <h3>Diagnóstico y Reparación</h3>
-                    <p>Solucionamos cualquier avería de hardware y software (errores, virus, malware) con presupuestos cerrados y total garantía.</p>
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Diagnóstico y Reparación" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3>Diagnóstico y Reparación</h3>
+                        <p>Solucionamos cualquier avería de hardware y software (errores, virus, malware) con presupuestos cerrados y total garantía.</p>
+                    </div>
+                    <a href="./reparacion-y-mantenimiento.html" class="btn">Ver Servicios</a>
                 </div>
-                <a href="./reparacion-y-mantenimiento.html" class="btn">Ver Servicios</a>
             </div>
 
+            <!-- Tarjeta 3 -->
             <div class="card">
-                <div>
-                    <h3>Ciberseguridad y Redes</h3>
-                    <p>Protegemos tus sistemas frente a amenazas avanzadas, auditorías de seguridad, pentesting ético y planes de contingencia para tu negocio.</p>
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Ciberseguridad y Redes" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3>Ciberseguridad y Redes</h3>
+                        <p>Protegemos tus sistemas frente a amenazas avanzadas, auditorías de seguridad, pentesting ético y planes de contingencia para tu negocio.</p>
+                    </div>
+                    <a href="./ciberseguridad.html" class="btn">Proteger sistemas</a>
                 </div>
-                <a href="./ciberseguridad.html" class="btn">Proteger sistemas</a>
             </div>
         </section>
 

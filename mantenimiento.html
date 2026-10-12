@@ -37,6 +37,7 @@
             flex-direction: column;
             position: fixed;
             height: 100vh;
+            z-index: 10;
         }
         .logo-area {
             font-size: 1.2rem;
@@ -81,7 +82,7 @@
             margin-left: 260px;
             flex: 1;
             padding: 3rem;
-            max-width: 1000px;
+            width: calc(100% - 260px);
         }
         header {
             text-align: center;
@@ -153,7 +154,7 @@
         @media (max-width: 768px) {
             body { flex-direction: column; }
             aside { position: relative; width: 100%; height: auto; }
-            main { margin-left: 0; padding: 1.5rem; }
+            main { margin-left: 0; width: 100%; padding: 1.5rem; }
         }
     </style>
 </head>
@@ -221,7 +222,7 @@
             <em>Incluye:</em> Firewall gestionado y monitorizado, parches de seguridad obligatorios y auditorías de vulnerabilidad constantes.<br>
             <em>Clave:</em> Gestión de Acceso y Contraseñas para todos los empleados[cite: 16].</p>
 
-            <p><strong>2. Plan "Continuidad Total" (El Mejor en Productividad)</strong><br>
+            <p style="margin-top: 1rem;"><strong>2. Plan "Continuidad Total" (El Mejor en Productividad)</strong><br>
             CERO TIEMPO DE INACTIVIDAD: Nuestro servicio más completo, con prioridad de respuesta.<br>
             <em>Incluye:</em> Monitorización 24/7 de servidores, Soporte ilimitado (remoto y <em>in situ</em>), y planes de Recuperación ante Desastres (DRP).<br>
             <em>Garantía SLA:</em> Tiempo de respuesta máximo garantizado para problemas críticos[cite: 16].</p>

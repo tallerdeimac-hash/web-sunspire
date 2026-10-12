@@ -36,6 +36,7 @@
             flex-direction: column;
             position: fixed;
             height: 100vh;
+            z-index: 10;
         }
         .logo-area {
             font-size: 1.2rem;
@@ -80,7 +81,7 @@
             margin-left: 260px;
             flex: 1;
             padding: 3rem;
-            max-width: 1200px;
+            width: calc(100% - 260px);
         }
         header {
             text-align: center;
@@ -97,7 +98,7 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
         .card {
@@ -149,7 +150,7 @@
         @media (max-width: 768px) {
             body { flex-direction: column; }
             aside { position: relative; width: 100%; height: auto; }
-            main { margin-left: 0; padding: 1.5rem; }
+            main { margin-left: 0; width: 100%; padding: 1.5rem; }
         }
     </style>
 </head>

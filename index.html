@@ -101,7 +101,6 @@
             color: var(--text-muted);
             font-size: 1.1rem;
         }
-        /* Banner Visual Tecnológico */
         .hero-banner {
             width: 100%;
             height: 280px;
@@ -110,7 +109,7 @@
             margin-bottom: 3rem;
             border: 1px solid var(--border-color);
             position: relative;
-            background: linear-gradient(rgba(5, 11, 24, 0.4), rgba(5, 11, 24, 0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(5, 11, 24, 0.4), rgba(5, 11, 24, 0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,6 +132,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
             width: 100%;
+            margin-bottom: 3.5rem;
         }
         .card {
             background-color: var(--card-bg);
@@ -186,6 +186,47 @@
         .btn:hover {
             background-color: var(--accent-hover);
         }
+        /* Bloque Por qué elegirnos */
+        .why-us-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+        .why-us-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--yellow-accent);
+            margin-bottom: 2rem;
+        }
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .why-us-item {
+            background-color: #0d1b2a;
+            border: 1px solid #1e293b;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .why-us-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .why-us-item h4 {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .why-us-item p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
         footer {
             margin-top: 4rem;
             text-align: center;
@@ -197,12 +238,14 @@
         }
         @media (max-width: 1024px) {
             .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .why-us-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             body { flex-direction: column; overflow-x: auto; }
             aside { position: relative; width: 100%; height: auto; }
             main { margin-left: 0; width: 100%; padding: 1.5rem; }
             .grid { grid-template-columns: 1fr; }
+            .why-us-grid { grid-template-columns: 1fr; }
             .hero-banner { height: 220px; }
         }
     </style>
@@ -249,7 +292,7 @@
                 <div class="card-body">
                     <div>
                         <h3>Quiénes Somos</h3>
-                        <p>Somos un equipo de técnicos cualificados con años de experiencia y capacidad de adaptación. Te asistimos donde lo necesites con máxima transparencia y garantía.</p>
+                        <p>Soporte técnico especializado respaldado por más de 20 años de experiencia profesional en administración de sistemas, redes y electrónica. Asistencia directa y transparente.</p>
                     </div>
                     <a href="./asesoramiento.html" class="btn">Saber más</a>
                 </div>
@@ -261,7 +304,7 @@
                 <div class="card-body">
                     <div>
                         <h3>Diagnóstico y Reparación</h3>
-                        <p>Solucionamos cualquier avería de hardware y software (errores, virus, malware) con presupuestos cerrados y total garantía.</p>
+                        <p>Solucionamos cualquier avería de hardware y software (errores, virus, malware) con presupuestos cerrados previos y total garantía.</p>
                     </div>
                     <a href="./reparacion-y-mantenimiento.html" class="btn">Ver Servicios</a>
                 </div>
@@ -276,6 +319,33 @@
                         <p>Protegemos tus sistemas frente a amenazas avanzadas, auditorías de seguridad, pentesting ético y planes de contingencia para tu negocio.</p>
                     </div>
                     <a href="./ciberseguridad.html" class="btn">Proteger sistemas</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque Por qué elegirnos -->
+        <section class="why-us-section">
+            <h2 class="why-us-title">Garantía de Servicio y Confianza</h2>
+            <div class="why-us-grid">
+                <div class="why-us-item">
+                    <span class="why-us-icon">🛠️</span>
+                    <h4>+20 Años de Experiencia</h4>
+                    <p>Trayectoria profesional contrastada en sistemas informáticos, redes y microelectrónica.</p>
+                </div>
+                <div class="why-us-item">
+                    <span class="why-us-icon">📋</span>
+                    <h4>Presupuesto Previo</h4>
+                    <p>Transparencia total. Conoce exactamente la solución y el coste antes de autorizar cualquier reparación.</p>
+                </div>
+                <div class="why-us-item">
+                    <span class="why-us-icon">🔒</span>
+                    <h4>Custodia de Datos</h4>
+                    <p>Máxima confidencialidad y preservación garantizada de tu información personal o corporativa.</p>
+                </div>
+                <div class="why-us-item">
+                    <span class="why-us-icon">⏱️</span>
+                    <h4>Diagnóstico Ágil</h4>
+                    <p>Evaluación rápida (24h-48h) para que tu equipo vuelva a estar operativo lo antes posible.</p>
                 </div>
             </div>
         </section>

@@ -27,6 +27,8 @@
             line-height: 1.6;
             display: flex;
             min-height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
         }
         aside {
             width: 260px;
@@ -81,8 +83,9 @@
         main {
             margin-left: 260px;
             flex: 1;
-            padding: 3rem;
-            width: calc(100% - 260px);
+            padding: 3rem 4rem;
+            width: calc(100vw - 260px);
+            box-sizing: border-box;
         }
         header {
             text-align: center;
@@ -94,6 +97,29 @@
             font-size: 2.8rem;
             color: var(--text-color);
             margin-bottom: 0.5rem;
+        }
+        .hero-banner {
+            width: 100%;
+            height: 250px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+            background: linear-gradient(rgba(5, 11, 24, 0.3), rgba(5, 11, 24, 0.85)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero-banner-content h2 {
+            font-size: 2.2rem;
+            color: var(--yellow-accent);
+            margin-bottom: 0.5rem;
+        }
+        .hero-banner-content p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
         }
         .section-box {
             background-color: var(--card-bg);
@@ -146,9 +172,10 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
             padding-top: 1.5rem;
+            width: 100%;
         }
         @media (max-width: 768px) {
-            body { flex-direction: column; }
+            body { flex-direction: column; overflow-x: auto; }
             aside { position: relative; width: 100%; height: auto; }
             main { margin-left: 0; width: 100%; padding: 1.5rem; }
         }
@@ -177,62 +204,46 @@
 
     <main>
         <header>
-            <h1>Ciberseguridad</h1>
-            <p class="section-subtitle">¿Qué Ofrecemos?</p>
-            <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted);">No se trata solo de arreglar, sino de planificar. Nuestro servicio de consultoría te proporciona una visión 360ª del estado tecnológico de tu empresa, hogar o proyecto[cite: 15].</p>
+            <h1>Ciberseguridad y Protección de Datos</h1>
+            <p style="color: var(--text-muted);">Blindamos tus sistemas e infraestructuras frente a ciberataques, brechas de seguridad y pérdida de información.</p>
         </header>
+
+        <div class="hero-banner">
+            <div class="hero-banner-content">
+                <h2>Protección 360º para tu Negocio</h2>
+                <p>Auditorías Pentesting, Hardening de Servidores y Planes de Contingencia Backup.</p>
+            </div>
+        </div>
 
         <section class="section-box">
             <h2 class="section-title">Análisis de Riesgos y Diseño de Políticas</h2>
-            <p><strong>Análisis de Riesgos:</strong> Identificamos y evaluamos los "agujeros negros" de seguridad en tu infraestructura de red, sistemas y datos[cite: 15].</p>
-            <p><strong>Diseño de Políticas:</strong> Implementación de políticas de acceso, <em>backup</em> y recuperación de desastres (<em>Disaster Recovery</em>) para garantizar la continuidad del negocio[cite: 15].</p>
+            <p><strong>Análisis de Riesgos:</strong> Identificamos y evaluamos vulnerabilidades en tu infraestructura de red, sistemas y datos.</p>
+            <p><strong>Diseño de Políticas:</strong> Políticas de acceso, copias de seguridad avanzadas y planes de recuperación ante desastres (<em>Disaster Recovery</em>).</p>
         </section>
 
         <section class="section-box">
             <h2 class="section-title">Gestión de Riesgos y Vulnerabilidades</h2>
-            <p>Identificamos y cerramos las puertas de entrada que los atacantes podrían usar antes de que las encuentren[cite: 16].</p>
             <ul class="detail-list">
-                <li><strong>Auditorías de Sistemas (Pentesting Ético):</strong> Simulamos ataques informáticos reales contra sus redes, aplicaciones y sistemas para descubrir vulnerabilidades. Resultado: Un informe detallado con el <em>ranking</em> de riesgos y un plan de acción priorizado para mitigar cada amenaza[cite: 16].</li>
-                <li><strong>Análisis y Gestión de Vulnerabilidades (VM):</strong> Escaneo continuo de su infraestructura para identificar software desactualizado, configuraciones débiles o errores de sistema. Resultado: Mantenemos un inventario de debilidades y gestionamos la aplicación de parches y correcciones de manera oportuna[cite: 16].</li>
+                <li><strong>Auditorías de Sistemas (Pentesting Ético):</strong> Simulamos ataques reales contra redes y sistemas para descubrir brechas antes que los atacantes.</li>
+                <li><strong>Gestión de Vulnerabilidades (VM):</strong> Escaneo continuo de la infraestructura y gestión automatizada de parches de seguridad.</li>
             </ul>
         </section>
 
         <section class="section-box">
             <h2 class="section-title">Protección de Endpoints y Seguridad de Usuario</h2>
-            <p>El eslabón más débil es, a menudo, el usuario. Fortalecemos tanto el equipo como a la persona[cite: 17].</p>
-            
-            <p class="section-subtitle">A. Defensa contra Malware Avanzado</p>
-            <p>No todos los virus son iguales. Ofrecemos protección contra[cite: 17]:</p>
+            <p class="section-subtitle">Defensa contra Malware Avanzado y Credenciales</p>
             <ul class="detail-list">
-                <li><strong>Ransomware:</strong> Protección y planes de respuesta para evitar el cifrado de datos críticos[cite: 17].</li>
-                <li><strong>Spyware y Adware:</strong> Limpieza profunda y sistemas de prevención para que su equipo no comprometa información ni sufra lentitud[cite: 17].</li>
-                <li><strong>Troyanos y Phishing:</strong> Implementación de filtros de correo electrónico y navegadores seguros para neutralizar los ataques de ingeniería social[cite: 17].</li>
-            </ul>
-
-            <p class="section-subtitle">B. Políticas de Contraseñas Robustas</p>
-            <ul class="detail-list">
-                <li><strong>Administradores de Contraseñas Centralizados:</strong> Le ayudamos a implementar soluciones para que su equipo use contraseñas complejas sin tener que memorizarlas[cite: 17].</li>
-                <li><strong>Autenticación Multifactor (MFA/2FA):</strong> Implementación obligatoria de doble factor de autenticación en todos los accesos sensibles (correo, servidores, nube) para frustrar el robo de credenciales[cite: 17].</li>
-                <li><strong>Auditoría de Contraseñas:</strong> Verificación periódica para detectar contraseñas débiles o repetidas en su organización[cite: 17].</li>
-            </ul>
-        </section>
-
-        <section class="section-box">
-            <h2 class="section-title">Mantenimiento y Actualización de Defensa</h2>
-            <p>La ciberseguridad es una carrera continua; sus defensas deben estar siempre a la vanguardia[cite: 18].</p>
-            <ul class="detail-list">
-                <li><strong>Gestión de Firmware y Hardware:</strong> Actualización Crítica: Aseguramos que el <em>firmware</em> de sus routers, firewalls, impresoras y dispositivos de red esté siempre actualizado, cerrando brechas que los fabricantes descubren constantemente[cite: 18].</li>
-                <li><strong>Sistemas Operativos (SO) y Aplicaciones:</strong> Parcheo Automatizado: Implementamos sistemas para aplicar automáticamente los parches de seguridad liberados por Microsoft, Apple o Linux, garantizando que no queden sistemas obsoletos expuestos[cite: 18].</li>
-                <li><strong>Configuración de Firewall:</strong> Reglas Personalizadas: Diseño, instalación y gestión de reglas de <em>firewall</em> adaptadas a las necesidades exactas de su negocio, permitiendo solo el tráfico esencial[cite: 18].</li>
+                <li><strong>Protección Antiransomware:</strong> Sistemas de alerta temprana y mitigación de cifrado malicioso.</li>
+                <li><strong>Autenticación Doble Factor (MFA/2FA):</strong> Implementación de accesos seguros en servidores, correo corporativo y entorno nube.</li>
+                <li><strong>Administradores de Contraseñas:</strong> Soluciones centralizadas de gestión de credenciales para equipos de trabajo.</li>
             </ul>
         </section>
 
         <section class="section-box">
             <h2 class="section-title">Educación y Cumplimiento Normativo</h2>
-            <p>La mejor tecnología no sirve sin personas informadas[cite: 19].</p>
             <ul class="detail-list">
-                <li><strong>Formación en Concienciación:</strong> Simulacros de <em>Phishing</em> (realizamos pruebas controladas para evaluar la respuesta de su personal ante correos maliciosos y capacitarlos en la identificación de amenazas) y Cursos de Buenas Prácticas (sesiones prácticas sobre manejo seguro de datos, teletrabajo seguro y uso correcto de dispositivos)[cite: 19].</li>
-                <li><strong>Asesoramiento de Cumplimiento (Compliance):</strong> Le asistimos en la adaptación de sus sistemas a normativas de protección de datos (como el RGPD u otras normativas locales) para evitar multas costosas[cite: 19].</li>
+                <li><strong>Simulacros de Phishing:</strong> Pruebas controladas para capacitar al personal ante ataques de ingeniería social.</li>
+                <li><strong>Compliance RGPD:</strong> Asesoramiento para la correcta adaptación normativa en protección de datos.</li>
             </ul>
         </section>
 

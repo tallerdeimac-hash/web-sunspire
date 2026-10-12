@@ -27,6 +27,8 @@
             line-height: 1.6;
             display: flex;
             min-height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
         }
         aside {
             width: 260px;
@@ -81,8 +83,9 @@
         main {
             margin-left: 260px;
             flex: 1;
-            padding: 3rem;
-            width: calc(100% - 260px);
+            padding: 3rem 4rem;
+            width: calc(100vw - 260px);
+            box-sizing: border-box;
         }
         header {
             text-align: center;
@@ -95,9 +98,14 @@
             color: var(--text-color);
             margin-bottom: 0.5rem;
         }
-        .hero-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .hero-banner {
+            width: 100%;
+            height: 220px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+            background: linear-gradient(rgba(5, 11, 24, 0.4), rgba(5, 11, 24, 0.85)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
         }
         .section-box {
             background-color: var(--card-bg);
@@ -150,9 +158,10 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
             padding-top: 1.5rem;
+            width: 100%;
         }
         @media (max-width: 768px) {
-            body { flex-direction: column; }
+            body { flex-direction: column; overflow-x: auto; }
             aside { position: relative; width: 100%; height: auto; }
             main { margin-left: 0; width: 100%; padding: 1.5rem; }
         }
@@ -181,63 +190,40 @@
 
     <main>
         <header>
-            <h1>Mantenimiento</h1>
-            <p class="hero-desc">Soluciones preventivas y correctivas para asegurar el rendimiento continuo de tus equipos.</p>
+            <h1>Mantenimiento Preventivo y Correctivo</h1>
+            <p style="color: var(--text-muted);">Asegura el rendimiento continuo y evita caídas de sistema no planificadas.</p>
         </header>
+
+        <div class="hero-banner"></div>
 
         <section class="section-box">
             <h2 class="section-title">Mantenimiento Correctivo (Reactivo)</h2>
-            <p>Nuestra promesa de respuesta rápida cuando ocurre un imprevisto[cite: 14].</p>
+            <p>Nuestra promesa de respuesta rápida cuando ocurre un imprevisto.</p>
             <ul class="detail-list">
-                <li><strong>Soporte Remoto Ilimitado:</strong> Solución inmediata de problemas de software, redes, impresoras y usuarios a través de asistencia remota[cite: 14].</li>
-                <li><strong>Asistencia In Situ:</strong> Visitas técnicas urgentes cuando la incidencia requiere intervención física en su oficina o domicilio[cite: 14].</li>
-                <li><strong>Desinfección de Emergencia:</strong> Eliminación prioritaria de virus, <em>malware</em> o <em>ransomware</em> que haya podido comprometer el sistema[cite: 14].</li>
-                <li><strong>Recuperación de Sistemas:</strong> Acciones para restaurar la operatividad utilizando las últimas copias de seguridad funcionales[cite: 14].</li>
+                <li><strong>Soporte Remoto Ilimitado:</strong> Solución inmediata de problemas informáticos a través de asistencia remota segura.</li>
+                <li><strong>Asistencia In Situ:</strong> Intervención física urgente en oficinas o domicilio.</li>
+                <li><strong>Desinfección de Emergencia:</strong> Limpieza prioritaria de malware o ransomware.</li>
             </ul>
         </section>
 
         <section class="section-box">
             <h2 class="section-title">Mantenimiento para Particulares (Hogar y Home Office)</h2>
-            <p>Queremos ofrecer tranquilidad, velocidad y protección personal a un coste accesible[cite: 15].</p>
-            <p>La lentitud, los virus y la pérdida de fotos son problemas personales que requieren una solución rápida y fiable. Nuestros planes están diseñados para el usuario doméstico que necesita que su PC o <em>Laptop</em> funcione siempre como el primer día[cite: 15].</p>
-            <p class="section-subtitle">Nuestro Mejor Servicio para Particulares: El Plan "Rendimiento Total"</p>
-            <p>Este plan combina la limpieza de virus con el mantenimiento preventivo esencial para el uso diario[cite: 15].</p>
-            
+            <p>Plan "Rendimiento Total": Limpieza y optimización periódica para que tu PC trabaje siempre a la máxima velocidad.</p>
             <ul class="detail-list">
-                <li><strong>Limpieza y Optimización Mensual:</strong> Adiós a la Lentitud: Eliminamos el software basura, los archivos temporales y optimizamos el inicio para que su PC arranque y trabaje a la máxima velocidad[cite: 15].</li>
-                <li><strong>Escudo Antivirus Continuo:</strong> Protección 24/7: Monitoreamos y gestionamos su antivirus (licencia no incluida) para detener malware y troyanos antes de que causen daños[cite: 15].</li>
-                <li><strong>Mantenimiento de Hardware:</strong> Larga Vida a su Equipo: Limpieza interna de polvo, optimización de ventiladores y gestión de temperatura para prevenir sobrecalentamiento y averías[cite: 15].</li>
-                <li><strong>Soporte Remoto Rápido:</strong> Ayuda Inmediata: Asistencia remota para resolver problemas comunes (impresoras, correo electrónico, problemas de software) sin necesidad de moverse de casa[cite: 15].</li>
-                <li><strong>Gestión de Backups:</strong> Sus Recuerdos Seguros: Verificación trimestral del funcionamiento de su sistema de copias de seguridad de fotos, documentos y archivos personales[cite: 15].</li>
+                <li><strong>Limpieza y Optimización:</strong> Eliminación de archivos temporales y optimización del arranque.</li>
+                <li><strong>Mantenimiento Físico:</strong> Limpieza interna de polvo y pasta térmica para prevenir sobrecalentamiento.</li>
+                <li><strong>Gestión de Backups:</strong> Copias de seguridad garantizadas para tus archivos personales y fotos.</li>
             </ul>
         </section>
 
         <section class="section-box">
             <h2 class="section-title">Mantenimiento para Empresas (PYMES y Corporativo)</h2>
-            <p>En un entorno empresarial, cada minuto de inactividad es una pérdida. Nuestros planes no solo reparan, sino que actúan como su Departamento de TI externo, enfocados en la prevención y la estrategia[cite: 16].</p>
-            <p class="section-subtitle">Nuestros Mejores Planes Empresariales: Prevención, Ciberseguridad y SLA</p>
-            
-            <p><strong>1. Plan "Ciberseguridad Pro" (El Mejor en Protección)</strong><br>
-            BLINDAJE ANTE AMENAZAS: Mantenimiento enfocado en la protección total de datos.<br>
-            <em>Incluye:</em> Firewall gestionado y monitorizado, parches de seguridad obligatorios y auditorías de vulnerabilidad constantes.<br>
-            <em>Clave:</em> Gestión de Acceso y Contraseñas para todos los empleados[cite: 16].</p>
-
-            <p style="margin-top: 1rem;"><strong>2. Plan "Continuidad Total" (El Mejor en Productividad)</strong><br>
-            CERO TIEMPO DE INACTIVIDAD: Nuestro servicio más completo, con prioridad de respuesta.<br>
-            <em>Incluye:</em> Monitorización 24/7 de servidores, Soporte ilimitado (remoto y <em>in situ</em>), y planes de Recuperación ante Desastres (DRP).<br>
-            <em>Garantía SLA:</em> Tiempo de respuesta máximo garantizado para problemas críticos[cite: 16].</p>
-        </section>
-
-        <section class="section-box">
-            <h2 class="section-title">Tareas Exclusivas para Clientes Corporativos</h2>
-            <p>Los planes empresariales incluyen servicios esenciales para la operación que van más allá de una simple reparación[cite: 17]:</p>
+            <p>Tu departamento de TI externo enfocado en la continuidad del negocio.</p>
             <ul class="detail-list">
-                <li><strong>1. Mantenimiento de Servidores:</strong> Gestión proactiva de servidores físicos o virtualizados, asegurando el rendimiento y la disponibilidad de la red[cite: 17].</li>
-                <li><strong>2. Auditoría de Redes (LAN/WIFI):</strong> Optimización de la infraestructura de red para eliminar cuellos de botella y asegurar una conexión rápida y segura para todos[cite: 17].</li>
-                <li><strong>3. Gestión de Backup y Recuperación:</strong> Implementación y prueba periódica de su estrategia de copias de seguridad para asegurar que la recuperación de datos sea viable y rápida en caso de fallo[cite: 17].</li>
-                <li><strong>4. Informes de Rendimiento Mensuales:</strong> Documentación periódica sobre el estado de la infraestructura, tendencias de fallos y recomendaciones de inversión (consultoría)[cite: 17].</li>
+                <li><strong>Plan Ciberseguridad Pro:</strong> Firewall gestionado, parcheo de seguridad y control de contraseñas.</li>
+                <li><strong>Plan Continuidad Total:</strong> Monitorización 24/7 de servidores y respuesta garantizada SLA.</li>
+                <li><strong>Mantenimiento de Servidores y Redes:</strong> Auditorías LAN/WiFi y gestión de copias de seguridad de datos corporativos.</li>
             </ul>
-            <p style="text-align: center; color: var(--yellow-accent); font-weight: bold; margin-top: 1rem;">¡Solicite un Estudio de Riesgos Gratuito para su Empresa![cite: 17]</p>
         </section>
 
         <footer>

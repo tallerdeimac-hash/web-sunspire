@@ -13,6 +13,7 @@
             --accent-color: #3b82f6;
             --accent-hover: #2563eb;
             --border-color: #1e293b;
+            --yellow-accent: #facc15;
         }
         * {
             margin: 0;
@@ -26,6 +27,8 @@
             line-height: 1.6;
             display: flex;
             min-height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
         }
         aside {
             width: 260px;
@@ -80,42 +83,81 @@
         main {
             margin-left: 260px;
             flex: 1;
-            padding: 3rem;
-            width: calc(100% - 260px);
+            padding: 3rem 4rem;
+            width: calc(100vw - 260px);
+            box-sizing: border-box;
         }
         header {
+            text-align: center;
             margin-bottom: 2.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
+            width: 100%;
         }
         header h1 {
-            font-size: 2.2rem;
-            color: var(--text-color);
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
+            color: var(--text-color);
         }
         header p {
             color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .hero-banner {
+            width: 100%;
+            height: 240px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            background: linear-gradient(rgba(5, 11, 24, 0.5), rgba(5, 11, 24, 0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero-banner-content h2 {
+            font-size: 2rem;
+            color: var(--yellow-accent);
+            margin-bottom: 0.5rem;
+        }
+        .hero-banner-content p {
+            color: #e2e8f0;
+            font-size: 1.05rem;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            width: 100%;
         }
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
-            padding: 2rem;
-            transition: transform 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            width: 100%;
         }
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
         }
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .card-body {
+            padding: 2rem;
+        }
         .card h3 {
             margin-bottom: 1rem;
             color: var(--text-color);
+            font-size: 1.3rem;
         }
         .card p {
             color: var(--text-muted);
@@ -128,11 +170,16 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
             padding-top: 1.5rem;
+            width: 100%;
+        }
+        @media (max-width: 1024px) {
+            .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         }
         @media (max-width: 768px) {
-            body { flex-direction: column; }
+            body { flex-direction: column; overflow-x: auto; }
             aside { position: relative; width: 100%; height: auto; }
             main { margin-left: 0; width: 100%; padding: 1.5rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -163,20 +210,36 @@
             <p>Te guiamos en la toma de decisiones tecnológicas para optimizar recursos, reducir costes e impulsar tu proyecto.</p>
         </header>
 
+        <div class="hero-banner">
+            <div class="hero-banner-content">
+                <h2>Estrategia Digital a tu Medida</h2>
+                <p>Planificación de arquitectura de red, renovación de equipamiento y optimización de infraestructura IT.</p>
+            </div>
+        </div>
+
         <section class="grid">
             <div class="card">
-                <h3>💡 Consultoría Estratégica IT</h3>
-                <p>Evaluamos tus necesidades actuales de hardware y software para proponer arquitecturas eficientes y adaptadas a tu presupuesto.</p>
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Consultoría IT" class="card-img">
+                <div class="card-body">
+                    <h3>💡 Consultoría Estratégica IT</h3>
+                    <p>Evaluamos tus necesidades actuales de hardware y software para proponer arquitecturas eficientes y adaptadas a tu presupuesto.</p>
+                </div>
             </div>
 
             <div class="card">
-                <h3>🏢 Soluciones para Empresas</h3>
-                <p>Planificación de redes locales, integración de sistemas, digitalización de procesos y optimización de flujos de trabajo diarios.</p>
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Soluciones para Empresas" class="card-img">
+                <div class="card-body">
+                    <h3>🏢 Soluciones para Empresas</h3>
+                    <p>Planificación de redes locales, integración de sistemas, digitalización de procesos y optimización de flujos de trabajo diarios.</p>
+                </div>
             </div>
 
             <div class="card">
-                <h3>🤝 Soporte y Acompañamiento</h3>
-                <p>Asistencia técnica continua y resolución de dudas orientada tanto a profesionales autónomos como a particulares exigentes.</p>
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Soporte y Acompañamiento" class="card-img">
+                <div class="card-body">
+                    <h3>🤝 Soporte y Acompañamiento</h3>
+                    <p>Asistencia técnica continua y resolución de dudas orientada tanto a profesionales autónomos como a particulares exigentes.</p>
+                </div>
             </div>
         </section>
 

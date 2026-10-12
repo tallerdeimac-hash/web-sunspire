@@ -27,6 +27,8 @@
             line-height: 1.6;
             display: flex;
             min-height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
         }
         aside {
             width: 260px;
@@ -81,8 +83,9 @@
         main {
             margin-left: 260px;
             flex: 1;
-            padding: 3rem;
-            width: calc(100% - 260px);
+            padding: 3rem 4rem;
+            width: calc(100vw - 260px);
+            box-sizing: border-box;
         }
         header {
             text-align: center;
@@ -98,12 +101,21 @@
         .hero-subtitle {
             font-size: 1.3rem;
             font-weight: 600;
-            color: var(--text-color);
+            color: var(--yellow-accent);
             margin-bottom: 0.5rem;
         }
         .hero-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
+        }
+        .hero-banner {
+            width: 100%;
+            height: 220px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+            background: linear-gradient(rgba(5, 11, 24, 0.4), rgba(5, 11, 24, 0.85)), url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
         }
         .section-box {
             background-color: var(--card-bg);
@@ -171,9 +183,10 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
             padding-top: 1.5rem;
+            width: 100%;
         }
         @media (max-width: 768px) {
-            body { flex-direction: column; }
+            body { flex-direction: column; overflow-x: auto; }
             aside { position: relative; width: 100%; height: auto; }
             main { margin-left: 0; width: 100%; padding: 1.5rem; }
         }
@@ -202,10 +215,12 @@
 
     <main>
         <header>
-            <h1>Reparación</h1>
+            <h1>Reparación de Equipos</h1>
             <p class="hero-subtitle">Soluciones Rápidas, Resultados Duraderos</p>
-            <p class="hero-desc">Tu equipo no puede esperar. Ofrecemos diagnósticos transparentes y reparaciones expertas para PC, Laptops y Servidores.</p>
+            <p class="hero-desc">Tu equipo no puede esperar. Diagnósticos transparentes y reparaciones expertas para PC, Laptops y Servidores.</p>
         </header>
+
+        <div class="hero-banner"></div>
 
         <section class="section-box">
             <h2 class="section-title">Nuestro Proceso de 3 Pasos</h2>
@@ -227,36 +242,35 @@
             <div class="detail-group">
                 <h3>Paso 1: Diagnóstico Sin Compromiso</h3>
                 <ul class="detail-list">
-                    <li><strong>Inspección Detallada:</strong> Realizamos pruebas exhaustivas de <em>hardware</em> (disco duro, RAM, placa base) y <em>software</em> (sistema operativo, drivers, malware).</li>
-                    <li><strong>Informe y Presupuesto:</strong> Te entregamos un informe claro del problema y un presupuesto cerrado y detallado de la reparación. Si no aceptas el presupuesto, solo cobramos el diagnóstico.</li>
+                    <li><strong>Inspección Detallada:</strong> Pruebas exhaustivas de <em>hardware</em> (disco duro, RAM, placa base) y <em>software</em> (sistema operativo, drivers, malware).</li>
+                    <li><strong>Informe y Presupuesto:</strong> Presupuesto cerrado y transparente antes de cualquier reparación.</li>
                 </ul>
             </div>
 
             <div class="detail-group">
                 <h3>Paso 2: Reparación Experta</h3>
                 <ul class="detail-list">
-                    <li><strong>Ejecución Rápida:</strong> Nuestro equipo técnico procede con la reparación utilizando solo componentes de alta calidad.</li>
-                    <li><strong>Comunicación Constante:</strong> Te mantenemos informado sobre el progreso y el tiempo estimado de entrega.</li>
+                    <li><strong>Ejecución Rápida:</strong> Sustitución de componentes con piezas de máxima calidad.</li>
+                    <li><strong>Comunicación Constante:</strong> Seguimiento del estado de tu reparación en todo momento.</li>
                 </ul>
             </div>
 
             <div class="detail-group">
                 <h3>Paso 3: Verificación y Garantía</h3>
                 <ul class="detail-list">
-                    <li><strong>Pruebas de Estrés:</strong> Sometemos el equipo a pruebas finales para asegurar que el problema está completamente resuelto.</li>
-                    <li><strong>Garantía de Servicio:</strong> Todas nuestras reparaciones están respaldadas por una garantía, dándote tranquilidad total.</li>
+                    <li><strong>Pruebas de Estrés:</strong> Testeo exhaustivo antes de la entrega del equipo.</li>
+                    <li><strong>Garantía de Servicio:</strong> Cobertura total tras la reparación.</li>
                 </ul>
             </div>
         </section>
 
         <section class="section-box">
             <div class="detail-group">
-                <h3>Reparación de Hardware</h3>
+                <h3>Reparación de Hardware y Componentes</h3>
                 <ul class="detail-list">
-                    <li><strong>Componentes Internos:</strong> Sustitución y reparación de placas base, fuentes de alimentación, tarjetas gráficas y fallos en la memoria RAM.</li>
-                    <li><strong>Pantallas y Carcasas:</strong> Reparación de pantallas rotas, cambio de bisagras y carcasas dañadas en <em>laptops</em> y <em>All-in-One</em>.</li>
-                    <li><strong>Conectividad:</strong> Arreglo o sustitución de puertos USB, conectores de carga (DC Jack) y problemas de conectividad de red.</li>
-                    <li><strong>Actualizaciones:</strong> Instalación de discos SSD (Unidades de Estado Sólido) y ampliaciones de memoria para potenciar la velocidad de equipos antiguos.</li>
+                    <li><strong>Componentes Internos:</strong> Reparación de placas base, fuentes de alimentación, tarjetas gráficas y ampliaciones RAM.</li>
+                    <li><strong>Pantallas y Carcasas:</strong> Cambio de pantallas, bisagras y carcasas dañadas en portátiles y All-in-One.</li>
+                    <li><strong>Actualizaciones SSD:</strong> Sustitución de discos antiguos por SSD ultrarrápidos para multiplicar por 10 la velocidad de tu equipo.</li>
                 </ul>
             </div>
         </section>

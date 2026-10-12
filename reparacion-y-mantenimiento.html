@@ -13,6 +13,7 @@
             --accent-color: #3b82f6;
             --accent-hover: #2563eb;
             --border-color: #1e293b;
+            --yellow-accent: #facc15;
         }
         * {
             margin: 0;
@@ -26,6 +27,8 @@
             line-height: 1.6;
             display: flex;
             min-height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
         }
         aside {
             width: 260px;
@@ -80,39 +83,80 @@
         main {
             margin-left: 260px;
             flex: 1;
-            padding: 3rem;
-            width: calc(100% - 260px);
+            padding: 3rem 4rem;
+            width: calc(100vw - 260px);
+            box-sizing: border-box;
         }
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            width: 100%;
         }
         header h1 {
             font-size: 2.8rem;
             color: var(--text-color);
             margin-bottom: 0.5rem;
         }
+        .hero-banner {
+            width: 100%;
+            height: 240px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            background: linear-gradient(rgba(5, 11, 24, 0.5), rgba(5, 11, 24, 0.85)), url('https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero-banner-content h2 {
+            font-size: 2rem;
+            color: var(--yellow-accent);
+            margin-bottom: 0.5rem;
+        }
+        .hero-banner-content p {
+            color: #e2e8f0;
+            font-size: 1.05rem;
+        }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            width: 100%;
         }
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
-            padding: 2rem;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.3s ease, border-color 0.3s ease;
+            width: 100%;
         }
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
         }
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+        }
         .card h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             color: var(--text-color);
             font-size: 1.5rem;
         }
@@ -142,11 +186,13 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
             padding-top: 1.5rem;
+            width: 100%;
         }
         @media (max-width: 768px) {
-            body { flex-direction: column; }
+            body { flex-direction: column; overflow-x: auto; }
             aside { position: relative; width: 100%; height: auto; }
             main { margin-left: 0; width: 100%; padding: 1.5rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -173,24 +219,37 @@
 
     <main>
         <header>
-            <h1>Servicio Técnico</h1>
+            <h1>Servicio Técnico Especializado</h1>
         </header>
+
+        <div class="hero-banner">
+            <div class="hero-banner-content">
+                <h2>Rendimiento Garantizado para tus Equipos</h2>
+                <p>Diagnósticos ágiles, reparación de electrónica microinformática y planes preventivos.</p>
+            </div>
+        </div>
 
         <section class="grid">
             <div class="card">
-                <div>
-                    <h3>Larga Vida a tus Equipos</h3>
-                    <p>Reparación de hardware y limpieza profunda de virus y malware.</p>
+                <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=600&q=80" alt="Reparación Hardware" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3>Larga Vida a tus Equipos</h3>
+                        <p>Reparación avanzada de hardware, cambio de componentes, optimización de velocidad y desinfección profunda de virus y malware.</p>
+                    </div>
+                    <a href="./reparacion.html" class="btn">Reparación</a>
                 </div>
-                <a href="./reparacion.html" class="btn">Reparación</a>
             </div>
 
             <div class="card">
-                <div>
-                    <h3>Mantenimiento</h3>
-                    <p>Mantenimiento preventivo correctivo, y limpieza profunda de virus y malware.</p>
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Mantenimiento Preventivo" class="card-img">
+                <div class="card-body">
+                    <div>
+                        <h3>Mantenimiento Continuo</h3>
+                        <p>Planes preventivos y correctivos tanto para usuarios particulares como para infraestructuras corporativas y servidores.</p>
+                    </div>
+                    <a href="./mantenimiento.html" class="btn">Mantenimiento</a>
                 </div>
-                <a href="./mantenimiento.html" class="btn">Mantenimiento</a>
             </div>
         </section>
 

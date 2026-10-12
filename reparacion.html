@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparación y Mantenimiento - Informática Sunspire</title>
+    <style>
+        :root {
+            --bg-color: #050b18;
+            --card-bg: #0a1628;
+            --text-color: #ffffff;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --border-color: #1e293b;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+        aside {
+            width: 260px;
+            background-color: #030712;
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+        }
+        .logo-area {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 2.5rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-color);
+            background-color: var(--card-bg);
+        }
+        main {
+            margin-left: 260px;
+            flex: 1;
+            padding: 3rem;
+            max-width: 1100px;
+        }
+        header {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: var(--text-muted);
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--accent-color);
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .step-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            position: relative;
+        }
+        .step-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 1rem;
+        }
+        .step-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+        .service-item h4 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .service-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            aside { position: relative; width: 100%; height: auto; }
+            main { margin-left: 0; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div class="logo-area">
+            <span>💻 Informática Sunspire</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="asesoramiento.html">Asesoramiento</a></li>
+            <li><a href="reparacion.html" class="active">Reparación y Mantenimiento</a></li>
+            <li><a href="ciberseguridad.html">Ciberseguridad</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <header>
+            <h1>Reparación y Mantenimiento Técnico</h1>
+            <p>Diagnóstico preciso y solución integral para ordenadores, servidores y equipamiento informático.</p>
+        </header>
+
+        <h2 class="section-title">Proceso de Trabajo</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <span class="step-number">1</span>
+                <h3>1. Diagnóstico Inicial</h3>
+                <p>Evaluamos el estado del equipo, detectando fallos de hardware o software y analizando el rendimiento global.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">2</span>
+                <h3>2. Presupuesto Cerrado</h3>
+                <p>Te presentamos una propuesta clara y transparente sin sorpresas antes de iniciar cualquier reparación.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">3</span>
+                <h3>3. Reparación y Entrega</h3>
+                <p>Efectuamos la reparación, optimización y pruebas de estrés para garantizar el correcto funcionamiento del sistema.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Especialidades Técnicas</h2>
+        <div class="services-list">
+            <div class="service-item">
+                <h4>🔧 Reparación de Hardware</h4>
+                <p>Sustitución de componentes defectuosos (fuentes, placas, discos SSD, memorias RAM) e instalación de periféricos.</p>
+            </div>
+            <div class="service-item">
+                <h4>🧹 Mantenimiento Preventivo</h4>
+                <p>Limpieza interna de componentes, cambio de pasta térmica y optimización del flujo de aire para evitar sobrecalentamientos.</p>
+            </div>
+            <div class="service-item">
+                <h4>🛡️ Desinfección y Software</h4>
+                <p>Eliminación de virus, malware y ransomware. Reinstalación optimizada de sistemas operativos y actualización de drivers.</p>
+            </div>
+            <div class="service-item">
+                <h4>💾 Recuperación de Datos</h4>
+                <p>Extracción de archivos esenciales en discos dañados, formateados o con sectores defectuosos.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Informática Sunspire. Soluciones integrales para un mundo digital seguro.</p>
+        </footer>
+    </main>
+
+</body>
+</html>

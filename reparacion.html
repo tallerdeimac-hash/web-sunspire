@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reparación y Mantenimiento - Informática Sunspire</title>
+    <title>Reparación - Informática Sunspire</title>
     <style>
         :root {
             --bg-color: #050b18;
@@ -13,6 +13,7 @@
             --accent-color: #3b82f6;
             --accent-hover: #2563eb;
             --border-color: #1e293b;
+            --yellow-accent: #facc15;
         }
         * {
             margin: 0;
@@ -50,97 +51,117 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            padding: 0.75rem 1rem;
+            padding: 0.6rem 0.8rem;
             border-radius: 0.375rem;
             transition: all 0.3s ease;
             display: block;
+            font-size: 0.95rem;
         }
         .nav-links a:hover, .nav-links a.active {
             color: var(--text-color);
             background-color: var(--card-bg);
         }
+        .submenu {
+            list-style: none;
+            padding-left: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .submenu a {
+            font-size: 0.88rem;
+            color: #64748b;
+        }
         main {
             margin-left: 260px;
             flex: 1;
             padding: 3rem;
-            max-width: 1100px;
+            max-width: 1000px;
         }
         header {
+            text-align: center;
             margin-bottom: 2.5rem;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
+            padding-bottom: 2rem;
         }
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: var(--text-color);
             margin-bottom: 0.5rem;
         }
-        header p {
-            color: var(--text-muted);
-        }
-        .section-title {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem 0;
-            color: var(--accent-color);
-        }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        .step-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            position: relative;
-        }
-        .step-number {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            font-weight: bold;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            margin-bottom: 1rem;
-        }
-        .step-card h3 {
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-color);
             margin-bottom: 0.5rem;
         }
-        .step-card p {
+        .hero-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .service-item {
+        .section-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
-            padding: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
         }
-        .service-item h4 {
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
             color: var(--text-color);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
-        .service-item p {
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .step-card {
+            background-color: #0d1b2a;
+            border: 1px solid #1e293b;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .step-card h3 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .detail-group {
+            margin-bottom: 1.8rem;
+        }
+        .detail-group h3 {
+            color: var(--yellow-accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .detail-list {
+            list-style: none;
+        }
+        .detail-list li {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .detail-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .detail-list strong {
+            color: var(--text-color);
         }
         footer {
             margin-top: 4rem;
@@ -164,58 +185,80 @@
             <span>💻 Informática Sunspire</span>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="asesoramiento.html">Asesoramiento</a></li>
-            <li><a href="reparacion.html" class="active">Reparación y Mantenimiento</a></li>
-            <li><a href="ciberseguridad.html">Ciberseguridad</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./asesoramiento.html">Asesoramiento</a></li>
+            <li>
+                <a href="./reparacion-y-mantenimiento.html">Reparación y Mantenimiento</a>
+                <ul class="submenu">
+                    <li><a href="./reparacion.html" class="active">↳ Reparación</a></li>
+                    <li><a href="./mantenimiento.html">↳ Mantenimiento</a></li>
+                </ul>
+            </li>
+            <li><a href="./ciberseguridad.html">Ciberseguridad</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
         </ul>
     </aside>
 
     <main>
         <header>
-            <h1>Reparación y Mantenimiento Técnico</h1>
-            <p>Diagnóstico preciso y solución integral para ordenadores, servidores y equipamiento informático.</p>
+            <h1>Reparación</h1>
+            <p class="hero-subtitle">Soluciones Rápidas, Resultados Duraderos</p>
+            <p class="hero-desc">Tu equipo no puede esperar. Ofrecemos diagnósticos transparentes y reparaciones expertas para PC, Laptops y Servidores.</p>
         </header>
 
-        <h2 class="section-title">Proceso de Trabajo</h2>
-        <div class="steps-grid">
-            <div class="step-card">
-                <span class="step-number">1</span>
-                <h3>1. Diagnóstico Inicial</h3>
-                <p>Evaluamos el estado del equipo, detectando fallos de hardware o software y analizando el rendimiento global.</p>
+        <section class="section-box">
+            <h2 class="section-title">Nuestro Proceso de 3 Pasos</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <h3>Paso 1</h3>
+                    <p><strong>Diagnóstico sin compromiso</strong></p>
+                </div>
+                <div class="step-card">
+                    <h3>Paso 2</h3>
+                    <p><strong>Reparación Experta</strong></p>
+                </div>
+                <div class="step-card">
+                    <h3>Paso 3</h3>
+                    <p><strong>Verificación y Garantía</strong></p>
+                </div>
             </div>
-            <div class="step-card">
-                <span class="step-number">2</span>
-                <h3>2. Presupuesto Cerrado</h3>
-                <p>Te presentamos una propuesta clara y transparente sin sorpresas antes de iniciar cualquier reparación.</p>
-            </div>
-            <div class="step-card">
-                <span class="step-number">3</span>
-                <h3>3. Reparación y Entrega</h3>
-                <p>Efectuamos la reparación, optimización y pruebas de estrés para garantizar el correcto funcionamiento del sistema.</p>
-            </div>
-        </div>
 
-        <h2 class="section-title">Especialidades Técnicas</h2>
-        <div class="services-list">
-            <div class="service-item">
-                <h4>🔧 Reparación de Hardware</h4>
-                <p>Sustitución de componentes defectuosos (fuentes, placas, discos SSD, memorias RAM) e instalación de periféricos.</p>
+            <div class="detail-group">
+                <h3>Paso 1: Diagnóstico Sin Compromiso</h3>
+                <ul class="detail-list">
+                    <li><strong>Inspección Detallada:</strong> Realizamos pruebas exhaustivas de <em>hardware</em> (disco duro, RAM, placa base) y <em>software</em> (sistema operativo, drivers, malware).</li>
+                    <li><strong>Informe y Presupuesto:</strong> Te entregamos un informe claro del problema y un presupuesto cerrado y detallado de la reparación. Si no aceptas el presupuesto, solo cobramos el diagnóstico.</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <h4>🧹 Mantenimiento Preventivo</h4>
-                <p>Limpieza interna de componentes, cambio de pasta térmica y optimización del flujo de aire para evitar sobrecalentamientos.</p>
+
+            <div class="detail-group">
+                <h3>Paso 2: Reparación Experta</h3>
+                <ul class="detail-list">
+                    <li><strong>Ejecución Rápida:</strong> Nuestro equipo técnico procede con la reparación utilizando solo componentes de alta calidad.</li>
+                    <li><strong>Comunicación Constante:</strong> Te mantenemos informado sobre el progreso y el tiempo estimado de entrega.</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <h4>🛡️ Desinfección y Software</h4>
-                <p>Eliminación de virus, malware y ransomware. Reinstalación optimizada de sistemas operativos y actualización de drivers.</p>
+
+            <div class="detail-group">
+                <h3>Paso 3: Verificación y Garantía</h3>
+                <ul class="detail-list">
+                    <li><strong>Pruebas de Estrés:</strong> Sometemos el equipo a pruebas finales para asegurar que el problema está completamente resuelto.</li>
+                    <li><strong>Garantía de Servicio:</strong> Todas nuestras reparaciones están respaldadas por una garantía, dándote tranquilidad total.</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <h4>💾 Recuperación de Datos</h4>
-                <p>Extracción de archivos esenciales en discos dañados, formateados o con sectores defectuosos.</p>
+        </section>
+
+        <section class="section-box">
+            <div class="detail-group">
+                <h3>Reparación de Hardware</h3>
+                <ul class="detail-list">
+                    <li><strong>Componentes Internos:</strong> Sustitución y reparación de placas base, fuentes de alimentación, tarjetas gráficas y fallos en la memoria RAM.</li>
+                    <li><strong>Pantallas y Carcasas:</strong> Reparación de pantallas rotas, cambio de bisagras y carcasas dañadas en <em>laptops</em> y <em>All-in-One</em>.</li>
+                    <li><strong>Conectividad:</strong> Arreglo o sustitución de puertos USB, conectores de carga (DC Jack) y problemas de conectividad de red.</li>
+                    <li><strong>Actualizaciones:</strong> Instalación de discos SSD (Unidades de Estado Sólido) y ampliaciones de memoria para potenciar la velocidad de equipos antiguos.</li>
+                </ul>
             </div>
-        </div>
+        </section>
 
         <footer>
             <p>&copy; 2026 Informática Sunspire. Soluciones integrales para un mundo digital seguro.</p>
